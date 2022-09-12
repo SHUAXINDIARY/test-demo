@@ -7,12 +7,10 @@ export const PAGE_MODE = {
   PAGE_TWO: 2,
 };
 
-
-const usePage = (url = window.location.href) => {
+const usePage = (url: string) => {
   const [pageModel, setPageMode] = useState(PAGE_MODE.DEFAULT);
-  const { page_id } = parseUrlParams(url);
+  const { page_id } = parseUrlParams(url || '');
   useEffect(() => {
-    console.log(page_id);
     const _pageId = Number(page_id);
     switch (_pageId) {
       case PAGE_MODE.PAGE_ONE:

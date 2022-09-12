@@ -6,7 +6,7 @@ export const parseUrlParams = (url: string) => {
   if (!paramsUrl) {
     return {};
   }
-  const paramsArr = paramsUrl.split("&").reduce((total, item) => {
+  const paramsArr = paramsUrl?.split("&")?.reduce((total, item) => {
     const key = item.split("=")?.[0];
     const val = item.split("=")?.[1];
     total[key] = val;
